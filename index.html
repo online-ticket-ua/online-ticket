@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Авіаквитки онлайн — Надійний тревел-агент</title>
+  <meta name="description" content="Продаж авіаквитків онлайн: пошук, бронювання та оплата. Підтримка 24/7. Найкращі тарифи для індивідуальних і корпоративних клієнтів." />
+  <link rel="canonical" href="https://example.com/" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Авіаквитки онлайн — Надійний тревел-агент" />
+  <meta property="og:description" content="Миттєвий пошук рейсів і зручна оплата. Підтримка 24/7." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta name="theme-color" content="#0ea5e9" />
+
+  <!-- speed up the proxy host -->
+  <link rel="dns-prefetch" href="https://with.online-ticket.com.ua">
+  <link rel="preconnect" href="https://with.online-ticket.com.ua" crossorigin>
+
+  <style>
+    :root{--bg:#0b1220;--card:#0f172a;--text:#e5e7eb;--muted:#9ca3af;--accent:#0ea5e9;--accent-2:#22d3ee}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,"Noto Sans","Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji";color:var(--text);
+      background:radial-gradient(1200px 600px at 80% -10%,rgba(34,211,238,.12),transparent 60%),radial-gradient(900px 500px at 10% 0%,rgba(14,165,233,.14),transparent 60%),var(--bg);line-height:1.55}
+    a{color:var(--accent-2);text-decoration:none} a:hover{text-decoration:underline}
+
+    /* ширина сайта */
+    .container{width:100%;max-width:1400px;margin:0 auto;padding:0 20px}
+
+    header{position:sticky;top:0;backdrop-filter:blur(8px);background:rgba(11,18,32,.6);border-bottom:1px solid rgba(255,255,255,.06);z-index:10}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
+    .badge{font-size:12px;padding:2px 8px;border:1px solid rgba(255,255,255,.15);border-radius:999px;color:var(--muted)}
+    .btn{display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#081226;font-weight:600;box-shadow:0 8px 24px rgba(34,211,238,.2)}
+    .btn:hover{filter:brightness(1.05)}
+
+    .hero{padding:56px 0 22px;text-align:center;position:relative;overflow:hidden}
+    .kicker{color:var(--accent-2);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+    h1{margin:10px 0 14px;font-size:clamp(28px,4.8vw,48px);line-height:1.1}
+    .lead{max-width:960px;margin:0 auto;color:var(--muted);font-size:clamp(15px,2.2vw,18px)}
+
+    .features{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin:28px auto 36px}
+    .card{grid-column:span 4;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px}
+    .card h3{margin:6px 0 8px;font-size:18px}.card p{color:var(--muted);margin:0;font-size:14px}
+
+    .frame-wrap{margin:24px 0 8px;background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:12px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.02),0 20px 60px rgba(0,0,0,.4)}
+    .frame-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 10px 10px}
+    .frame-title{font-weight:700;font-size:14px;color:var(--muted);letter-spacing:.02em}
+    .frame-hint{font-size:12px;color:var(--muted)}
+
+    /* full-bleed для секции с iframe — на всю ширину экрана */
+    .fullbleed{width:100vw;margin-left:50%;transform:translateX(-50%);padding-left:20px;padding-right:20px}
+
+    .iframe-box{position:relative;width:100%;height:min(78vh,900px);min-height:620px;border-radius:12px;overflow:hidden}
+    .iframe-box>iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#0b1220}
+
+    .note{text-align:center;color:var(--muted);font-size:13px;margin-top:10px}
+    .faq{display:grid;gap:12px;margin:36px 0 64px}
+    .faq details{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px 14px}
+    .faq summary{cursor:pointer;font-weight:700}
+    .faq p{color:var(--muted);margin:8px 0 0}
+
+    footer{border-top:1px solid rgba(255,255,255,.08);padding:18px 0 40px;color:var(--muted);font-size:14px}
+    .foot{display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between}
+    .contacts{margin:40px 0 20px}
+    .contacts h2{margin:0 0 12px;font-size:clamp(22px,3.5vw,28px)}
+    .contacts-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .contacts-card{grid-column:span 8;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px}
+    .contacts-card.small{grid-column:span 4;display:flex;flex-direction:column;gap:10px}
+    .contacts-card p{margin:6px 0}
+    .contacts .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+
+    /* media */
+    .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;opacity:.6}
+    .frame-wrap .ambient{width:100%;border-radius:12px;display:block;margin-bottom:12px;border:1px solid rgba(255,255,255,.06)}
+    .journey{margin:28px 0 40px}
+    .journey-video{width:100%;border-radius:16px;display:block;border:1px solid rgba(255,255,255,.08)}
+    .icon-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);cursor:pointer}
+    .icon-btn:hover{background:rgba(255,255,255,.1)}
+
+    @media (max-width:900px){.card{grid-column:span 6}.contacts-card,.contacts-card.small{grid-column:span 12}}
+    @media (max-width:640px){.features{gap:12px}.card{grid-column:span 12}.iframe-box{min-height:520px;height:70vh}.nav .btn{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M3 13c6.5-1.5 10.5-2.5 12-3 1.5-.5 4.5-1.5 4.5-1.5s1.5-.5 1.5.5-.5 1.5-1 2-3 3-3 3l-9 1 4 5-2 .5-3.5-4L3 17v-4Z" stroke="#22d3ee" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Надійний тревел-агент</span>
+        <span class="badge">Авіаквитки онлайн</span>
+      </div>
+      <a class="btn" href="#book">Забронювати квиток</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <video class="hero-video" autoplay muted loop playsinline poster="hero-flight.png">
+        <source src="hero-flight-loop.mov" type="video/quicktime" />
+      </video>
+      <div class="kicker">Продаж авіаквитків</div>
+      <h1>Швидкий пошук і бронювання авіаквитків онлайн</h1>
+      <p class="lead">Порівнюємо тарифи понад 600 авіакомпаній та агенцій, пропонуємо зручну оплату й миттєву видачу маршрут-квитанції. Працюємо з індивідуальними та корпоративними клієнтами. Підтримка 24/7.</p>
+    </section>
+
+    <section class="features">
+      <div class="card">
+        <h3>Чесні тарифи</h3>
+        <p>Без прихованих комісій. Вартість і правила повернення/обміну — прозоро перед оплатою.</p>
+      </div>
+      <div class="card">
+        <h3>Підтримка 24/7</h3>
+        <p>Допоможемо з реєстрацією, вибором місць, багажем і змінами в бронюванні.</p>
+      </div>
+      <div class="card">
+        <h3>Корпоративним клієнтам</h3>
+        <p>Єдині звіти, ліміти, узгоджені правила подорожей і персональний менеджер.</p>
+      </div>
+    </section>
+
+    <!-- Декоративний роздільник між секціями -->
+    <img src="divider-routes.png" alt="Мережа авіамаршрутів" width="2400" height="400" loading="lazy" style="width:100%;border-radius:12px;opacity:.9;margin:4px 0 18px;">
+
+    <!-- full-width секция с iframe -->
+    <section id="book" class="frame-wrap fullbleed" aria-label="Онлайн-форма бронювання">
+      <div class="frame-head">
+        <div class="frame-title">Онлайн-бронювання</div>
+        <div class="frame-hint">Форма відкриється нижче. Якщо не завантажується — скористайтесь прямим посиланням.</div>
+      </div>
+
+      <video class="ambient" autoplay muted loop playsinline poster="divider-routes.png">
+        <source src="booking-ambient.mp4" type="video/mp4" />
+      </video>
+
+      <div class="iframe-box" role="region" aria-label="Вбудована форма пошуку авіаквитків">
+        <iframe
+          id="bookingFrame"
+          src="https://with.online-ticket.com.ua"
+          title="Форма пошуку та бронювання авіаквитків"
+          loading="eager"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="payment *; clipboard-write; fullscreen; geolocation; camera; microphone; autoplay"
+        ></iframe>
+      </div>
+    </section>
+
+    <section class="container faq" aria-label="Часті запитання">
+      <details>
+        <summary>Як я отримаю квиток після оплати?</summary>
+        <p>Маршрут-квитанція (e-ticket) надійде на електронну пошту, вказану під час бронювання. Також можна запросити дублікати у підтримці.</p>
+      </details>
+      <details>
+        <summary>Чи можна оформити квиток на юридичну особу?</summary>
+        <p>Так. Виставляємо рахунки, надаємо акти/інвойси й консолідовані звіти за період.</p>
+      </details>
+      <details>
+        <summary>Чи допоможете з поверненням або обміном?</summary>
+        <p>Так. Ми перевіримо правила тарифу, можливі штрафи й запропонуємо найвигідніший варіант зміни або повернення.</p>
+      </details>
+    </section>
+
+    <section id="contacts" class="container contacts" aria-label="Контакти">
+      <h2>Контакти</h2>
+      <div class="contacts-grid">
+        <div class="contacts-card">
+          <h3>Реквізити</h3>
+          <p><strong>ФОП:</strong> Домешок М.М.</p>
+          <p><strong>Email:</strong>
+            <button class="icon-btn" id="mailBtn" aria-label="Написати листа" title="Написати листа">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e5e7eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/>
+              </svg>
+            </button>
+          </p>
+          <p><strong>IBAN:</strong> <span class="mono">UA803052990000026003040109035</span></p>
+          <p><strong>Банк:</strong> КИЇВСЬКЕ ГРВ ПАТ КБ «ПРИВАТБАНК»</p>
+        </div>
+        <div class="contacts-card small">
+          <h3>Підтримка 24/7</h3>
+          <p>Звертайтеся з будь-яких питань щодо бронювань, повернень та змін.</p>
+          <a class="btn" href="#book">Відкрити форму бронювання</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container journey" aria-label="Натхненне відео">
+      <video class="journey-video" autoplay muted loop playsinline poster="hero-flight-vertical.png">
+        <source src="journey-begins.mp4" type="video/mp4" />
+      </video>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <div>© <span id="y"></span> ФОП Домешок М.М. · Усі права захищені.</div>
+      <div>
+        Телефон: <a href="tel:+380957956455">+380 (95) 795 64 55</a>
+        · <button class="icon-btn" id="mailBtnFooter" aria-label="Написати листа" title="Написати листа" style="vertical-align:middle">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e5e7eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/>
+            </svg>
+          </button>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Кнопки e-mail (адрес не світиться в коді сторінки)
+    const openMail = () => {
+      const user = "flpdomeshok";
+      const domain = "gmail.com";
+      window.location.href = "mailto:" + user + "@" + domain;
+    };
+    document.getElementById('mailBtn')?.addEventListener('click', openMail);
+    document.getElementById('mailBtnFooter')?.addEventListener('click', openMail);
+  </script>
+</body>
+</html>
